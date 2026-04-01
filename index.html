@@ -19,7 +19,7 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; overflow-x: hidden; max-width: 100vw; }
 
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -150,18 +150,34 @@ footer { background: var(--navy); padding: 2.5rem 3rem; display: flex; justify-c
 .footer-meta { font-size: 12px; color: rgba(255,255,255,0.4); text-align: right; line-height: 1.8; }
 
 @media (max-width: 768px) {
-  nav { padding: 0 1.5rem; }
+  html, body { overflow-x: hidden; width: 100%; }
+  nav { padding: 0 1.25rem; }
   .nav-links a:not(.nav-cta) { display: none; }
-  .hero { grid-template-columns: 1fr; }
+  .nav-cta { padding: 8px 14px; font-size: 13px; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-right { display: none; }
-  .hero-left { padding: 4rem 2rem; }
-  .section-wrap { padding: 4rem 1.5rem; }
+  .hero-left { padding: 5rem 1.5rem 3rem; width: 100%; }
+  .hero h1 { font-size: 36px; word-break: break-word; }
+  .hero-desc { font-size: 15px; max-width: 100%; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .btn-main { width: 100%; text-align: center; }
+  .hero-badges { gap: 1.5rem; flex-wrap: wrap; }
+  .trust-bar { overflow: hidden; }
+  .trust-inner { flex-direction: column; gap: 0; }
+  .trust-item { max-width: 100%; border-right: none; border-bottom: 1px solid rgba(14,31,61,0.2); padding: 14px 1.5rem; justify-content: flex-start; }
+  .trust-item:last-child { border-bottom: none; }
+  .section-wrap { padding: 3rem 1.5rem; }
+  .section-title { font-size: 26px; }
   .services-grid { grid-template-columns: 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
-  .about-layout, .contact-layout, .rot-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-layout, .contact-layout, .rot-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .rot-layout { gap: 2rem; }
   .gallery-layout { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .gallery-item:first-child { grid-row: auto; }
-  footer { flex-direction: column; gap: 1rem; text-align: center; }
+  .about-img-wrap img { height: 280px; }
+  .about-stats { gap: 1.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
   .footer-meta { text-align: center; }
 }
 </style>
@@ -327,7 +343,7 @@ footer { background: var(--navy); padding: 2.5rem 3rem; display: flex; justify-c
         <p>Fyll i formuläret så hör vi av oss inom 24 timmar med ett kostnadsfritt prisförslag. Inga dolda avgifter — alltid fast pris.</p>
         <div class="contact-items">
           <div class="contact-row"><div class="icon-wrap">📞</div><div><strong>Telefon</strong><span>08-123 45 67</span></div></div>
-          <div class="contact-row"><div class="icon-wrap">✉️</div><div><strong>E-post</strong><span>info@malmstrommaleri.se</span></div></div>
+          <div class="contact-row"><div class="icon-wrap">✉️</div><div><strong>E-post</strong><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="41282f272e012c202d2c3235332e2c2c202d2433286f3224">[email&#160;protected]</a></span></div></div>
           <div class="contact-row"><div class="icon-wrap">📍</div><div><strong>Område</strong><span>Stockholm & omnejd</span></div></div>
           <div class="contact-row"><div class="icon-wrap">🕐</div><div><strong>Öppettider</strong><span>Måndag–Fredag, 07:00–17:00</span></div></div>
         </div>
@@ -374,13 +390,4 @@ footer { background: var(--navy); padding: 2.5rem 3rem; display: flex; justify-c
   </div>
 </footer>
 
-<script>
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('.submit-btn');
-  btn.textContent = 'Tack! Vi hör av oss inom 24h.';
-  btn.style.background = '#1d6e40';
-}
-</script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></sc
