@@ -76,7 +76,10 @@ nav {
 .service-tile::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--gold); transition: height 0.3s ease; }
 .service-tile:hover { background: var(--white); }
 .service-tile:hover::before { height: 100%; }
-.service-num { font-family: 'Playfair Display', serif; font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 1rem; font-weight: 400; }
+.service-img { width: 100%; height: 180px; object-fit: cover; display: block; filter: saturate(0.85); transition: transform 0.4s ease, filter 0.3s; }
+.service-tile:hover .service-img { transform: scale(1.04); filter: saturate(1); }
+.service-img-wrap { overflow: hidden; margin: -2.5rem -2rem 1.5rem; }
+.service-num { font-family: 'Playfair Display', serif; font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 0.75rem; font-weight: 400; }
 .service-tile h3 { font-size: 17px; font-weight: 500; color: var(--navy); margin-bottom: 0.75rem; }
 .service-tile p { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
 
@@ -230,12 +233,30 @@ footer { background: var(--navy); padding: 2.5rem 3rem; display: flex; justify-c
     <h2 class="section-title">Vad vi utför</h2>
     <p class="section-sub">Från enstaka rum till hela fastigheter — vi hanterar alla typer av målningsuppdrag med samma omsorg och noggrannhet.</p>
     <div class="services-grid">
-      <div class="service-tile"><div class="service-num">01</div><h3>Invändig målning</h3><p>Sovrum, vardagsrum, kök och badrum. Vi arbetar rent och noggrant med skyddande täckning av golv och möbler.</p></div>
-      <div class="service-tile"><div class="service-num">02</div><h3>Utvändig målning</h3><p>Fasader, fönster, dörrar och staket. Vi använder väderbeständiga produkter dimensionerade för nordiskt klimat.</p></div>
-      <div class="service-tile"><div class="service-num">03</div><h3>Lokaler & kontor</h3><p>Kontorslokaler, butiker och trapphus. Vi jobbar gärna kvällstid eller helger för att minimera störningar.</p></div>
-      <div class="service-tile"><div class="service-num">04</div><h3>Tapetsering</h3><p>Montering av alla tapettyper — från enkla papperstapeter till textil och strukturtapeter. Vi hjälper med mönsterval.</p></div>
-      <div class="service-tile"><div class="service-num">05</div><h3>Träskydd & bets</h3><p>Behandling av trägolv, altaner och fasader. Rätt produkt för varje träslag och exponeringsgrad.</p></div>
-      <div class="service-tile"><div class="service-num">06</div><h3>Spackling & lagning</h3><p>Vi åtgärdar sprickor, hål och ojämnheter innan vi målar — resultatet syns alltid i slutresultatet.</p></div>
+      <div class="service-tile">
+        <div class="service-img-wrap"><img class="service-img" src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=600&q=80" alt="Invändig målning"/></div>
+        <div class="service-num">01</div><h3>Invändig målning</h3><p>Sovrum, vardagsrum, kök och badrum. Vi arbetar rent och noggrant med skyddande täckning av golv och möbler.</p>
+      </div>
+      <div class="service-tile">
+        <div class="service-img-wrap"><img class="service-img" src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=600&q=80" alt="Utvändig målning"/></div>
+        <div class="service-num">02</div><h3>Utvändig målning</h3><p>Fasader, fönster, dörrar och staket. Vi använder väderbeständiga produkter dimensionerade för nordiskt klimat.</p>
+      </div>
+      <div class="service-tile">
+        <div class="service-img-wrap"><img class="service-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Lokaler och kontor"/></div>
+        <div class="service-num">03</div><h3>Lokaler & kontor</h3><p>Kontorslokaler, butiker och trapphus. Vi jobbar gärna kvällstid eller helger för att minimera störningar.</p>
+      </div>
+      <div class="service-tile">
+        <div class="service-img-wrap"><img class="service-img" src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80" alt="Tapetsering"/></div>
+        <div class="service-num">04</div><h3>Tapetsering</h3><p>Montering av alla tapettyper — från enkla papperstapeter till textil och strukturtapeter. Vi hjälper med mönsterval.</p>
+      </div>
+      <div class="service-tile">
+        <div class="service-img-wrap"><img class="service-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Träskydd och bets"/></div>
+        <div class="service-num">05</div><h3>Träskydd & bets</h3><p>Behandling av trägolv, altaner och fasader. Rätt produkt för varje träslag och exponeringsgrad.</p>
+      </div>
+      <div class="service-tile">
+        <div class="service-img-wrap"><img class="service-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt="Spackling och lagning"/></div>
+        <div class="service-num">06</div><h3>Spackling & lagning</h3><p>Vi åtgärdar sprickor, hål och ojämnheter innan vi målar — resultatet syns alltid i slutresultatet.</p>
+      </div>
     </div>
   </div>
 </div>
